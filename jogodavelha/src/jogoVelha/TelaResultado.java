@@ -254,11 +254,12 @@ public class TelaResultado extends javax.swing.JFrame {
     private void jButtonAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonAMouseClicked
         valores = "";
         for(i = 0; i < 2; i++){
+            valores += "|";
             for(j = 0; j < 5; j++){
                 if(a[i][j] > 9) valores += " " + a[i][j] + " ";
-                else valores += " " + a[i][j] + "  ";
+                else valores += " 0"+a[i][j] + " ";
             }
-            valores += "\n";
+            valores += "|\n";
         }
         jTextAreaResultado.setText(valores);                                   
     }//GEN-LAST:event_jButtonAMouseClicked
@@ -274,11 +275,12 @@ public class TelaResultado extends javax.swing.JFrame {
     private void jButtonBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonBMouseClicked
         valores = "";
         for(i = 0; i < 2; i++){
+            valores += "|";
             for(j = 0; j < 5; j++){
-                if(b[i][j] > 9) valores += " " + b[i][j]+ "  ";
-                else valores += " " + b[i][j] + "  ";
+                if(b[i][j] > 9) valores += " " + b[i][j]+ " ";
+                else valores += " 0" + b[i][j] + " ";
             }
-            valores += "\n";
+            valores += "|\n";
         }
         jTextAreaResultado.setText(valores);                                   
     }//GEN-LAST:event_jButtonBMouseClicked
@@ -286,11 +288,12 @@ public class TelaResultado extends javax.swing.JFrame {
     private void jButtonCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonCMouseClicked
         valores = "";
         for(i = 0; i < 5; i++){
+            valores += "|";
             for(j = 0; j < 2; j++){
-                if(c[i][j] > 9) valores += " " + c[i][j] + "  ";
+                if(c[i][j] > 9) valores += c[i][j] + " ";
                 else valores += "  " + c[i][j] + "  ";
             }
-            valores += "\n";
+            valores += "|\n";
         }
         jTextAreaResultado.setText(valores);
     }//GEN-LAST:event_jButtonCMouseClicked
@@ -298,11 +301,12 @@ public class TelaResultado extends javax.swing.JFrame {
     private void jButtonDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonDMouseClicked
         valores = "";
         for(i = 0; i < 2; i++){
+            valores += "|";
             for(j = 0; j < 5; j++){
-                if(d[i][j] > 9) valores += "   " + d[i][j];
-                else valores += "    " + d[i][j];
+                if(d[i][j] > 9) valores += " " + d[i][j]+ " ";
+                else valores += " 0" + d[i][j] + " ";
             }
-            valores += "\n";
+            valores += "|\n";
         }
         jTextAreaResultado.setText(valores);
     }//GEN-LAST:event_jButtonDMouseClicked
@@ -310,11 +314,12 @@ public class TelaResultado extends javax.swing.JFrame {
     private void jButtonEMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonEMouseClicked
         valores = "";
         for(i = 0; i < 2; i++){
+            valores += "|";
             for(j = 0; j < 5; j++){
-                if(e[i][j] > 9) valores += "   " + e[i][j];
-                else valores += "    " + e[i][j];
+                if(e[i][j] > 9) valores += " " + e[i][j] + " ";
+                else valores += " 0" + e[i][j] + " ";
             }
-            valores += "\n";
+            valores += "|\n";
         }
         jTextAreaResultado.setText(valores);                                    
     }//GEN-LAST:event_jButtonEMouseClicked
@@ -322,11 +327,12 @@ public class TelaResultado extends javax.swing.JFrame {
     private void jButtonFMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonFMouseClicked
         valores = "";
         for(i = 0; i < 2; i++){
+            valores += "|";
             for(j = 0; j < 2; j++){
-                if(f[i][j] > 9) valores += "   " + f[i][j];
-                else valores += "    " + f[i][j];
+                if(f[i][j] > 9) valores += " " + f[i][j] + " ";
+                else valores += " 0" + f[i][j] + " ";
             }
-            valores += "\n";
+            valores += "|\n";
         }
         jTextAreaResultado.setText(valores);                                
     }//GEN-LAST:event_jButtonFMouseClicked
