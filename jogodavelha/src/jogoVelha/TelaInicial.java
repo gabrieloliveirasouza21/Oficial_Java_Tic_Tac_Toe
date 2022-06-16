@@ -60,31 +60,31 @@ public class TelaInicial extends javax.swing.JFrame {
         getContentPane().add(jButton1);
         jButton1.setBounds(110, 490, 360, 80);
 
-        jLabelX1.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\imagens\\Jogador 1.png")); // NOI18N
+        jLabelX1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jogoVelha/Jogador 1.png"))); // NOI18N
         getContentPane().add(jLabelX1);
         jLabelX1.setBounds(130, 360, 90, 100);
 
-        jLabelX2.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\imagens\\Jogador 1.png")); // NOI18N
+        jLabelX2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jogoVelha/Jogador 1.png"))); // NOI18N
         getContentPane().add(jLabelX2);
         jLabelX2.setBounds(370, 110, 120, 110);
 
-        jLabelX3.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\imagens\\Jogador 1.png")); // NOI18N
+        jLabelX3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jogoVelha/Jogador 1.png"))); // NOI18N
         getContentPane().add(jLabelX3);
         jLabelX3.setBounds(250, 240, 90, 100);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\imagens\\Jogador 2 Fundo preto.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jogoVelha/Jogador 2 Fundo preto.png"))); // NOI18N
         getContentPane().add(jLabel2);
         jLabel2.setBounds(130, 130, 90, 80);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\imagens\\Jogador 2 Fundo preto.png")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jogoVelha/Jogador 2 Fundo preto.png"))); // NOI18N
         getContentPane().add(jLabel4);
         jLabel4.setBounds(250, 370, 90, 80);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\imagens\\Jogador 2 Fundo preto.png")); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jogoVelha/Jogador 2 Fundo preto.png"))); // NOI18N
         getContentPane().add(jLabel5);
         jLabel5.setBounds(380, 250, 90, 80);
 
-        TelaDeFundo.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\imagens\\Tela de fundo Jogo da velha.png")); // NOI18N
+        TelaDeFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jogoVelha/Tela de fundo Jogo da velha.png"))); // NOI18N
         getContentPane().add(TelaDeFundo);
         TelaDeFundo.setBounds(-30, -60, 650, 800);
 
