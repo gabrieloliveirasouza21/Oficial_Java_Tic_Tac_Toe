@@ -50,12 +50,8 @@ public class TelaDoJogo extends javax.swing.JFrame {
     private void initComponents() {
 
         jLayeredPane1 = new javax.swing.JLayeredPane();
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jButton10 = new javax.swing.JButton();
         jButton00 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
         jButton01 = new javax.swing.JButton();
         jButton22 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
@@ -64,6 +60,8 @@ public class TelaDoJogo extends javax.swing.JFrame {
         jButton21 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton02 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        TelaDeFundo = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
         jLayeredPane1.setLayout(jLayeredPane1Layout);
@@ -81,52 +79,15 @@ public class TelaDoJogo extends javax.swing.JFrame {
         setBackground(new java.awt.Color(0, 102, 153));
         setBounds(new java.awt.Rectangle(1, 1, 1, 1));
         setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        setMaximumSize(new java.awt.Dimension(649, 679));
+        setMinimumSize(new java.awt.Dimension(649, 679));
+        setResizable(false);
+        getContentPane().setLayout(null);
 
-        jPanel1.setBackground(new java.awt.Color(204, 255, 204));
-        jPanel1.setForeground(new java.awt.Color(255, 0, 255));
-        jPanel1.setMinimumSize(new java.awt.Dimension(450, 450));
-        jPanel1.setPreferredSize(new java.awt.Dimension(450, 450));
-
-        jPanel2.setBackground(new java.awt.Color(255, 255, 204));
-        jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
-        jLabel1.setBackground(new java.awt.Color(0, 0, 153));
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 51, 51));
-        jLabel1.setText("Jogador 1");
-
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 52)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 204));
-        jLabel2.setText("teste");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
-                .addComponent(jLabel1))
-        );
-
-        jButton10.setBackground(new java.awt.Color(153, 204, 255));
-        jButton10.setFont(new java.awt.Font("Book Antiqua", 0, 48)); // NOI18N
-        jButton10.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton10MouseClicked(evt);
-            }
-        });
-
-        jButton00.setBackground(new java.awt.Color(153, 204, 255));
+        jButton00.setBackground(new java.awt.Color(0, 0, 0));
         jButton00.setFont(new java.awt.Font("Book Antiqua", 0, 48)); // NOI18N
+        jButton00.setForeground(new java.awt.Color(0, 0, 0));
+        jButton00.setBorder(null);
         jButton00.setMaximumSize(new java.awt.Dimension(100, 100));
         jButton00.setMinimumSize(new java.awt.Dimension(100, 100));
         jButton00.setPreferredSize(new java.awt.Dimension(100, 100));
@@ -140,9 +101,23 @@ public class TelaDoJogo extends javax.swing.JFrame {
                 jButton00ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton00);
+        jButton00.setBounds(150, 110, 100, 100);
 
-        jButton01.setBackground(new java.awt.Color(153, 204, 255));
+        jButton10.setBackground(new java.awt.Color(0, 0, 0));
+        jButton10.setFont(new java.awt.Font("Book Antiqua", 0, 48)); // NOI18N
+        jButton10.setForeground(new java.awt.Color(0, 0, 0));
+        jButton10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton10MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jButton10);
+        jButton10.setBounds(150, 240, 100, 90);
+
+        jButton01.setBackground(new java.awt.Color(0, 0, 0));
         jButton01.setFont(new java.awt.Font("Book Antiqua", 0, 48)); // NOI18N
+        jButton01.setForeground(new java.awt.Color(0, 0, 0));
         jButton01.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton01MouseClicked(evt);
@@ -153,17 +128,23 @@ public class TelaDoJogo extends javax.swing.JFrame {
                 jButton01ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton01);
+        jButton01.setBounds(280, 110, 90, 100);
 
-        jButton22.setBackground(new java.awt.Color(153, 204, 255));
+        jButton22.setBackground(new java.awt.Color(0, 0, 0));
         jButton22.setFont(new java.awt.Font("Book Antiqua", 0, 48)); // NOI18N
+        jButton22.setForeground(new java.awt.Color(0, 0, 0));
         jButton22.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton22MouseClicked(evt);
             }
         });
+        getContentPane().add(jButton22);
+        jButton22.setBounds(400, 360, 100, 100);
 
-        jButton11.setBackground(new java.awt.Color(153, 204, 255));
+        jButton11.setBackground(new java.awt.Color(0, 0, 0));
         jButton11.setFont(new java.awt.Font("Book Antiqua", 0, 48)); // NOI18N
+        jButton11.setForeground(new java.awt.Color(0, 0, 0));
         jButton11.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton11MouseClicked(evt);
@@ -174,9 +155,12 @@ public class TelaDoJogo extends javax.swing.JFrame {
                 jButton11ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton11);
+        jButton11.setBounds(280, 240, 90, 90);
 
-        jButton12.setBackground(new java.awt.Color(153, 204, 255));
+        jButton12.setBackground(new java.awt.Color(0, 0, 0));
         jButton12.setFont(new java.awt.Font("Book Antiqua", 0, 48)); // NOI18N
+        jButton12.setForeground(new java.awt.Color(0, 0, 0));
         jButton12.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton12MouseClicked(evt);
@@ -187,22 +171,30 @@ public class TelaDoJogo extends javax.swing.JFrame {
                 jButton12ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton12);
+        jButton12.setBounds(400, 240, 100, 90);
 
-        jButton20.setBackground(new java.awt.Color(153, 204, 255));
+        jButton20.setBackground(new java.awt.Color(0, 0, 0));
         jButton20.setFont(new java.awt.Font("Book Antiqua", 0, 48)); // NOI18N
+        jButton20.setForeground(new java.awt.Color(0, 0, 0));
         jButton20.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton20MouseClicked(evt);
             }
         });
+        getContentPane().add(jButton20);
+        jButton20.setBounds(150, 360, 100, 100);
 
-        jButton21.setBackground(new java.awt.Color(153, 204, 255));
+        jButton21.setBackground(new java.awt.Color(0, 0, 0));
         jButton21.setFont(new java.awt.Font("Bookman Old Style", 0, 48)); // NOI18N
+        jButton21.setForeground(new java.awt.Color(0, 0, 0));
         jButton21.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton21MouseClicked(evt);
             }
         });
+        getContentPane().add(jButton21);
+        jButton21.setBounds(280, 360, 90, 100);
 
         jButton1.setBackground(new java.awt.Color(153, 153, 153));
         jButton1.setFont(new java.awt.Font("Book Antiqua", 3, 24)); // NOI18N
@@ -213,83 +205,32 @@ public class TelaDoJogo extends javax.swing.JFrame {
                 jButton1MouseClicked(evt);
             }
         });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(190, 510, 256, 36);
 
-        jButton02.setBackground(new java.awt.Color(153, 204, 255));
+        jButton02.setBackground(new java.awt.Color(0, 0, 0));
         jButton02.setFont(new java.awt.Font("Book Antiqua", 0, 48)); // NOI18N
+        jButton02.setForeground(new java.awt.Color(0, 0, 0));
         jButton02.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton02MouseClicked(evt);
             }
         });
+        getContentPane().add(jButton02);
+        jButton02.setBounds(400, 110, 100, 100);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(66, 66, 66)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton00, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton20, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton01, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton02, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton21, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton22, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(63, Short.MAX_VALUE))
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(99, 99, 99))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton00, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton01, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton02, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton20, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton21, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton22, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jButton1)
-                .addContainerGap(16, Short.MAX_VALUE))
-        );
+        jLabel1.setBackground(new java.awt.Color(0, 0, 153));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Vez dos Humanos");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(180, 30, 320, 48);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 465, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 462, Short.MAX_VALUE)
-        );
+        TelaDeFundo.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\imagens\\Tela de fundo Jogo da velha.png")); // NOI18N
+        TelaDeFundo.setMaximumSize(new java.awt.Dimension(619, 679));
+        TelaDeFundo.setMinimumSize(new java.awt.Dimension(619, 679));
+        getContentPane().add(TelaDeFundo);
+        TelaDeFundo.setBounds(0, 0, 648, 680);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -298,10 +239,10 @@ public class TelaDoJogo extends javax.swing.JFrame {
         if(x[0][2] != 0 && x[0][2] != 1 && !ganhador){
             if(jogador){
                 x[0][2] = 0;
-                jButton02.setText("O");
+                jButton02.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\imagens\\Jogador 2 Fundo preto.png"));
             }else{
                 x[0][2] = 1;
-                jButton02.setText("X");
+                jButton02.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\imagens\\Jogador 1.png"));
             }
             sansung();
         }
@@ -309,8 +250,8 @@ public class TelaDoJogo extends javax.swing.JFrame {
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         if(jogador){
-            jLabel1.setText("Vez do 'O'");
-        }else jLabel1.setText("Vez do 'X'");
+            jLabel1.setText("Vez dos Aliens");
+        }else jLabel1.setText("Vez dos Humanos");
         if(rodadas < 5){
             int num = 2;
             for(i = 0; i < 3; i++){
@@ -337,10 +278,10 @@ public class TelaDoJogo extends javax.swing.JFrame {
         if(x[2][1] != 0 && x[2][1] != 1 && !ganhador){
             if(jogador){
                 x[2][1] = 0;
-                jButton21.setText("O");
+                jButton21.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\imagens\\Jogador 2 Fundo preto.png"));
             }else{
                 x[2][1] = 1;
-                jButton21.setText("X");
+                jButton21.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\imagens\\Jogador 1.png"));
             }
             sansung();
         }
@@ -350,10 +291,10 @@ public class TelaDoJogo extends javax.swing.JFrame {
         if(x[2][0] != 0 && x[2][0] != 1 && !ganhador){
             if(jogador){
                 x[2][0] = 0;
-                jButton20.setText("O");
+                jButton20.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\imagens\\Jogador 2 Fundo preto.png"));
             }else{
                 x[2][0] = 1;
-                jButton20.setText("X");
+                jButton20.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\imagens\\Jogador 1.png"));
             }
             sansung();
         }
@@ -367,10 +308,10 @@ public class TelaDoJogo extends javax.swing.JFrame {
         if(x[1][2] != 0 && x[1][2] != 1 && !ganhador){
             if(jogador){
                 x[1][2] = 0;
-                jButton12.setText("O");
+                jButton12.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\imagens\\Jogador 2 Fundo preto.png"));
             }else{
                 x[1][2] = 1;
-                jButton12.setText("X");
+                jButton12.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\imagens\\Jogador 1.png"));
             }
             sansung();
         }
@@ -384,10 +325,10 @@ public class TelaDoJogo extends javax.swing.JFrame {
         if(x[1][1] != 0 && x[1][1] != 1 && !ganhador){
             if(jogador){
                 x[1][1] = 0;
-                jButton11.setText("O");
+                jButton11.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\imagens\\Jogador 2 Fundo preto.png"));
             }else{
                 x[1][1] = 1;
-                jButton11.setText("X");
+                jButton11.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\imagens\\Jogador 1.png"));
             }
             sansung();
         }
@@ -397,10 +338,10 @@ public class TelaDoJogo extends javax.swing.JFrame {
         if(x[2][2] != 0 && x[2][2] != 1 && !ganhador){
             if(jogador){
                 x[2][2] = 0;
-                jButton22.setText("O");
+                jButton22.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\imagens\\Jogador 2 Fundo preto.png"));
             }else{
                 x[2][2] = 1;
-                jButton22.setText("X");
+                jButton22.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\imagens\\Jogador 1.png"));
             }
             sansung();
         }
@@ -414,10 +355,10 @@ public class TelaDoJogo extends javax.swing.JFrame {
         if(x[0][1] != 0 && x[0][1] != 1 && !ganhador){
             if(jogador){
                 x[0][1] = 0;
-                jButton01.setText("O");
+                jButton01.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\imagens\\Jogador 2 Fundo preto.png"));
             }else{
                 x[0][1] = 1;
-                jButton01.setText("X");
+                jButton01.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\imagens\\Jogador 1.png"));
             }
             sansung();
         }
@@ -431,10 +372,10 @@ public class TelaDoJogo extends javax.swing.JFrame {
         if(x[0][0] != 0 && x[0][0] != 1 && !ganhador){
             if(jogador){
                 x[0][0] = 0;
-                jButton00.setText("O");
+                jButton00.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\imagens\\Jogador 2 Fundo preto.png"));
             }else{
                 x[0][0] = 1;
-                jButton00.setText("X");
+                jButton00.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\imagens\\Jogador 1.png"));
             }
             sansung();
         }
@@ -444,10 +385,10 @@ public class TelaDoJogo extends javax.swing.JFrame {
         if(x[1][0] != 0 && x[1][0] != 1 && !ganhador){
             if(jogador){
                 x[1][0] = 0;
-                jButton10.setText("O");
+                jButton10.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\imagens\\Jogador 2 Fundo preto.png"));
             }else{
                 x[1][0] = 1;
-                jButton10.setText("X");
+                jButton10.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\imagens\\Jogador 1.png"));
             }
             sansung();
         }
@@ -508,23 +449,23 @@ public class TelaDoJogo extends javax.swing.JFrame {
                 velha = 0;
                 jButton1.setVisible(true);
             }else{
-                if(jogador){
-                    jLabel1.setText("Vez do 'O'");
-                }else jLabel1.setText("Vez do 'X'");
+                if(!jogador){
+                    jLabel1.setText("Vez dos Aliens");
+                }else jLabel1.setText("Vez do Humanos");
             }
         }
         jogador = !jogador;
     }
     public void limpeza(){
-        jButton00.setText("");
-        jButton01.setText("");
-        jButton02.setText("");
-        jButton10.setText("");
-        jButton11.setText("");
-        jButton12.setText("");
-        jButton20.setText("");
-        jButton21.setText("");
-        jButton22.setText("");
+        jButton00.setIcon(null);
+        jButton01.setIcon(null);
+        jButton02.setIcon(null);
+        jButton10.setIcon(null);
+        jButton11.setIcon(null);
+        jButton12.setIcon(null);
+        jButton20.setIcon(null);
+        jButton21.setIcon(null);
+        jButton22.setIcon(null);
     }
     /**
      * @param args the command line arguments
@@ -562,6 +503,7 @@ public class TelaDoJogo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel TelaDeFundo;
     private javax.swing.JButton jButton00;
     private javax.swing.JButton jButton01;
     private javax.swing.JButton jButton02;
@@ -573,9 +515,6 @@ public class TelaDoJogo extends javax.swing.JFrame {
     private javax.swing.JButton jButton21;
     private javax.swing.JButton jButton22;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLayeredPane jLayeredPane1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }

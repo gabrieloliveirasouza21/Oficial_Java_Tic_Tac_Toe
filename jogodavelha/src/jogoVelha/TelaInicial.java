@@ -27,47 +27,66 @@ public class TelaInicial extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
+        jLabelX1 = new javax.swing.JLabel();
+        jLabelX2 = new javax.swing.JLabel();
+        jLabelX3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        TelaDeFundo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(619, 679));
+        setMinimumSize(new java.awt.Dimension(619, 679));
+        setResizable(false);
+        getContentPane().setLayout(null);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 204));
-
+        jButton1.setBackground(new java.awt.Color(0, 0, 0));
+        jButton1.setFont(new java.awt.Font("Lucida Bright", 0, 36)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 204, 204));
         jButton1.setText("Jogar");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton1MouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton1MouseExited(evt);
+            }
         });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(110, 490, 360, 80);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(152, 152, 152)
-                .addComponent(jButton1)
-                .addContainerGap(176, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(136, 136, 136)
-                .addComponent(jButton1)
-                .addContainerGap(142, Short.MAX_VALUE))
-        );
+        jLabelX1.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\imagens\\Jogador 1.png")); // NOI18N
+        getContentPane().add(jLabelX1);
+        jLabelX1.setBounds(130, 360, 90, 100);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        jLabelX2.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\imagens\\Jogador 1.png")); // NOI18N
+        getContentPane().add(jLabelX2);
+        jLabelX2.setBounds(370, 110, 120, 110);
+
+        jLabelX3.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\imagens\\Jogador 1.png")); // NOI18N
+        getContentPane().add(jLabelX3);
+        jLabelX3.setBounds(250, 240, 90, 100);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\imagens\\Jogador 2 Fundo preto.png")); // NOI18N
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(130, 130, 90, 80);
+
+        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\imagens\\Jogador 2 Fundo preto.png")); // NOI18N
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(250, 370, 90, 80);
+
+        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\imagens\\Jogador 2 Fundo preto.png")); // NOI18N
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(380, 250, 90, 80);
+
+        TelaDeFundo.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\imagens\\Tela de fundo Jogo da velha.png")); // NOI18N
+        getContentPane().add(TelaDeFundo);
+        TelaDeFundo.setBounds(-30, -60, 650, 800);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -78,6 +97,14 @@ public class TelaInicial extends javax.swing.JFrame {
         TelaDoJogo jogo = new TelaDoJogo();
         jogo.setVisible(true);
     }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseEntered
+        jButton1.setFont(new java.awt.Font("Lucida Bright", 0, 42));
+    }//GEN-LAST:event_jButton1MouseEntered
+
+    private void jButton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseExited
+        jButton1.setFont(new java.awt.Font("Lucida Bright", 0, 36));
+    }//GEN-LAST:event_jButton1MouseExited
 
     /**
      * @param args the command line arguments
@@ -115,7 +142,13 @@ public class TelaInicial extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel TelaDeFundo;
     private javax.swing.JButton jButton1;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabelX1;
+    private javax.swing.JLabel jLabelX2;
+    private javax.swing.JLabel jLabelX3;
     // End of variables declaration//GEN-END:variables
 }
