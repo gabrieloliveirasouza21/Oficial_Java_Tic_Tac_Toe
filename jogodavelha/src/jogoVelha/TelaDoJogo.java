@@ -50,8 +50,8 @@ public class TelaDoJogo extends javax.swing.JFrame {
     private void initComponents() {
 
         jLayeredPane1 = new javax.swing.JLayeredPane();
-        jButton00 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
+        jButton00 = new javax.swing.JButton();
         jButton01 = new javax.swing.JButton();
         jButton22 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
@@ -84,6 +84,18 @@ public class TelaDoJogo extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(null);
 
+        jButton10.setBackground(new java.awt.Color(0, 0, 0));
+        jButton10.setFont(new java.awt.Font("Book Antiqua", 0, 48)); // NOI18N
+        jButton10.setForeground(new java.awt.Color(0, 0, 0));
+        jButton10.setBorder(null);
+        jButton10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton10MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jButton10);
+        jButton10.setBounds(150, 240, 100, 90);
+
         jButton00.setBackground(new java.awt.Color(0, 0, 0));
         jButton00.setFont(new java.awt.Font("Book Antiqua", 0, 48)); // NOI18N
         jButton00.setForeground(new java.awt.Color(0, 0, 0));
@@ -104,20 +116,10 @@ public class TelaDoJogo extends javax.swing.JFrame {
         getContentPane().add(jButton00);
         jButton00.setBounds(150, 110, 100, 100);
 
-        jButton10.setBackground(new java.awt.Color(0, 0, 0));
-        jButton10.setFont(new java.awt.Font("Book Antiqua", 0, 48)); // NOI18N
-        jButton10.setForeground(new java.awt.Color(0, 0, 0));
-        jButton10.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton10MouseClicked(evt);
-            }
-        });
-        getContentPane().add(jButton10);
-        jButton10.setBounds(150, 240, 100, 90);
-
         jButton01.setBackground(new java.awt.Color(0, 0, 0));
         jButton01.setFont(new java.awt.Font("Book Antiqua", 0, 48)); // NOI18N
         jButton01.setForeground(new java.awt.Color(0, 0, 0));
+        jButton01.setBorder(null);
         jButton01.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton01MouseClicked(evt);
@@ -134,6 +136,7 @@ public class TelaDoJogo extends javax.swing.JFrame {
         jButton22.setBackground(new java.awt.Color(0, 0, 0));
         jButton22.setFont(new java.awt.Font("Book Antiqua", 0, 48)); // NOI18N
         jButton22.setForeground(new java.awt.Color(0, 0, 0));
+        jButton22.setBorder(null);
         jButton22.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton22MouseClicked(evt);
@@ -145,6 +148,7 @@ public class TelaDoJogo extends javax.swing.JFrame {
         jButton11.setBackground(new java.awt.Color(0, 0, 0));
         jButton11.setFont(new java.awt.Font("Book Antiqua", 0, 48)); // NOI18N
         jButton11.setForeground(new java.awt.Color(0, 0, 0));
+        jButton11.setBorder(null);
         jButton11.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton11MouseClicked(evt);
@@ -161,6 +165,7 @@ public class TelaDoJogo extends javax.swing.JFrame {
         jButton12.setBackground(new java.awt.Color(0, 0, 0));
         jButton12.setFont(new java.awt.Font("Book Antiqua", 0, 48)); // NOI18N
         jButton12.setForeground(new java.awt.Color(0, 0, 0));
+        jButton12.setBorder(null);
         jButton12.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton12MouseClicked(evt);
@@ -177,6 +182,7 @@ public class TelaDoJogo extends javax.swing.JFrame {
         jButton20.setBackground(new java.awt.Color(0, 0, 0));
         jButton20.setFont(new java.awt.Font("Book Antiqua", 0, 48)); // NOI18N
         jButton20.setForeground(new java.awt.Color(0, 0, 0));
+        jButton20.setBorder(null);
         jButton20.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton20MouseClicked(evt);
@@ -188,6 +194,7 @@ public class TelaDoJogo extends javax.swing.JFrame {
         jButton21.setBackground(new java.awt.Color(0, 0, 0));
         jButton21.setFont(new java.awt.Font("Bookman Old Style", 0, 48)); // NOI18N
         jButton21.setForeground(new java.awt.Color(0, 0, 0));
+        jButton21.setBorder(null);
         jButton21.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton21MouseClicked(evt);
@@ -211,6 +218,7 @@ public class TelaDoJogo extends javax.swing.JFrame {
         jButton02.setBackground(new java.awt.Color(0, 0, 0));
         jButton02.setFont(new java.awt.Font("Book Antiqua", 0, 48)); // NOI18N
         jButton02.setForeground(new java.awt.Color(0, 0, 0));
+        jButton02.setBorder(null);
         jButton02.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton02MouseClicked(evt);
@@ -226,7 +234,7 @@ public class TelaDoJogo extends javax.swing.JFrame {
         getContentPane().add(jLabel1);
         jLabel1.setBounds(180, 30, 320, 48);
 
-        TelaDeFundo.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\imagens\\Tela de fundo Jogo da velha.png")); // NOI18N
+        TelaDeFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jogoVelha/Tela de fundo Jogo da velha.png"))); // NOI18N
         TelaDeFundo.setMaximumSize(new java.awt.Dimension(619, 679));
         TelaDeFundo.setMinimumSize(new java.awt.Dimension(619, 679));
         getContentPane().add(TelaDeFundo);
@@ -239,10 +247,10 @@ public class TelaDoJogo extends javax.swing.JFrame {
         if(x[0][2] != 0 && x[0][2] != 1 && !ganhador){
             if(jogador){
                 x[0][2] = 0;
-                jButton02.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\imagens\\Jogador 2 Fundo preto.png"));
+                jButton02.setIcon(new javax.swing.ImageIcon("Jogador 2 Fundo preto.png"));
             }else{
                 x[0][2] = 1;
-                jButton02.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\imagens\\Jogador 1.png"));
+                jButton02.setIcon(new javax.swing.ImageIcon("Jogador 1.png"));
             }
             sansung();
         }
@@ -278,10 +286,10 @@ public class TelaDoJogo extends javax.swing.JFrame {
         if(x[2][1] != 0 && x[2][1] != 1 && !ganhador){
             if(jogador){
                 x[2][1] = 0;
-                jButton21.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\imagens\\Jogador 2 Fundo preto.png"));
+                jButton21.setIcon(new javax.swing.ImageIcon("Jogador 2 Fundo preto.png"));
             }else{
                 x[2][1] = 1;
-                jButton21.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\imagens\\Jogador 1.png"));
+                jButton21.setIcon(new javax.swing.ImageIcon("Jogador 1.png"));
             }
             sansung();
         }
@@ -291,10 +299,10 @@ public class TelaDoJogo extends javax.swing.JFrame {
         if(x[2][0] != 0 && x[2][0] != 1 && !ganhador){
             if(jogador){
                 x[2][0] = 0;
-                jButton20.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\imagens\\Jogador 2 Fundo preto.png"));
+                jButton20.setIcon(new javax.swing.ImageIcon("Jogador 2 Fundo preto.png"));
             }else{
                 x[2][0] = 1;
-                jButton20.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\imagens\\Jogador 1.png"));
+                jButton20.setIcon(new javax.swing.ImageIcon("Jogador 1.png"));
             }
             sansung();
         }
@@ -308,10 +316,10 @@ public class TelaDoJogo extends javax.swing.JFrame {
         if(x[1][2] != 0 && x[1][2] != 1 && !ganhador){
             if(jogador){
                 x[1][2] = 0;
-                jButton12.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\imagens\\Jogador 2 Fundo preto.png"));
+                jButton12.setIcon(new javax.swing.ImageIcon("Jogador 2 Fundo preto.png"));
             }else{
                 x[1][2] = 1;
-                jButton12.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\imagens\\Jogador 1.png"));
+                jButton12.setIcon(new javax.swing.ImageIcon("Jogador 1.png"));
             }
             sansung();
         }
@@ -325,10 +333,10 @@ public class TelaDoJogo extends javax.swing.JFrame {
         if(x[1][1] != 0 && x[1][1] != 1 && !ganhador){
             if(jogador){
                 x[1][1] = 0;
-                jButton11.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\imagens\\Jogador 2 Fundo preto.png"));
+                jButton11.setIcon(new javax.swing.ImageIcon("Jogador 2 Fundo preto.png"));
             }else{
                 x[1][1] = 1;
-                jButton11.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\imagens\\Jogador 1.png"));
+                jButton11.setIcon(new javax.swing.ImageIcon("Jogador 1.png"));
             }
             sansung();
         }
@@ -338,10 +346,10 @@ public class TelaDoJogo extends javax.swing.JFrame {
         if(x[2][2] != 0 && x[2][2] != 1 && !ganhador){
             if(jogador){
                 x[2][2] = 0;
-                jButton22.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\imagens\\Jogador 2 Fundo preto.png"));
+                jButton22.setIcon(new javax.swing.ImageIcon("Jogador 2 Fundo preto.png"));
             }else{
                 x[2][2] = 1;
-                jButton22.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\imagens\\Jogador 1.png"));
+                jButton22.setIcon(new javax.swing.ImageIcon("Jogador 1.png"));
             }
             sansung();
         }
@@ -355,10 +363,10 @@ public class TelaDoJogo extends javax.swing.JFrame {
         if(x[0][1] != 0 && x[0][1] != 1 && !ganhador){
             if(jogador){
                 x[0][1] = 0;
-                jButton01.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\imagens\\Jogador 2 Fundo preto.png"));
+                jButton01.setIcon(new javax.swing.ImageIcon("Jogador 2 Fundo preto.png"));
             }else{
                 x[0][1] = 1;
-                jButton01.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\imagens\\Jogador 1.png"));
+                jButton01.setIcon(new javax.swing.ImageIcon("Jogador 1.png"));
             }
             sansung();
         }
@@ -372,10 +380,10 @@ public class TelaDoJogo extends javax.swing.JFrame {
         if(x[0][0] != 0 && x[0][0] != 1 && !ganhador){
             if(jogador){
                 x[0][0] = 0;
-                jButton00.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\imagens\\Jogador 2 Fundo preto.png"));
+                jButton00.setIcon(new javax.swing.ImageIcon("Jogador 2 Fundo preto.png"));
             }else{
                 x[0][0] = 1;
-                jButton00.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\imagens\\Jogador 1.png"));
+                jButton00.setIcon(new javax.swing.ImageIcon("Jogador 1.png"));
             }
             sansung();
         }
@@ -385,10 +393,10 @@ public class TelaDoJogo extends javax.swing.JFrame {
         if(x[1][0] != 0 && x[1][0] != 1 && !ganhador){
             if(jogador){
                 x[1][0] = 0;
-                jButton10.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\imagens\\Jogador 2 Fundo preto.png"));
+                jButton10.setIcon(new javax.swing.ImageIcon("Jogador 2 Fundo preto.png"));
             }else{
                 x[1][0] = 1;
-                jButton10.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\imagens\\Jogador 1.png"));
+                jButton10.setIcon(new javax.swing.ImageIcon("Jogador 1.png"));
             }
             sansung();
         }
@@ -415,20 +423,20 @@ public class TelaDoJogo extends javax.swing.JFrame {
            if(rodadas == 0){
                 if(jogador){
                  res[0][rodadas] = res[0][rodadas] + 5;
-                 JOptionPane.showInternalMessageDialog(null,"Jogador 'O' ganhou");
+                 JOptionPane.showInternalMessageDialog(null,"Os Aliens Ganharam a Batalha");
                 }else{
                  res[1][rodadas] = res[0][rodadas] + 5;
-                 JOptionPane.showInternalMessageDialog(null,"Jogador 'X' ganhou");
+                 JOptionPane.showInternalMessageDialog(null,"Os Humanos Ganharam a Batalha");
                 }   
            }else{
                 if(jogador){
                 res[0][rodadas] = res[0][rodadas-1] + 5;
                 res[1][rodadas] = res[1][rodadas-1];
-                JOptionPane.showInternalMessageDialog(null,"Jogador 'O' ganhou");
+                JOptionPane.showInternalMessageDialog(null,"Os Aliens Ganharam a Batalha");
             }else{
                 res[1][rodadas] = res[1][rodadas-1] + 5;
                 res[0][rodadas] = res[0][rodadas-1];
-                JOptionPane.showInternalMessageDialog(null,"Jogador 'X' ganhou");
+                JOptionPane.showInternalMessageDialog(null,"Os Humanos Ganharam a Batalha");
             }
            }
             rodadas++;
@@ -444,14 +452,14 @@ public class TelaDoJogo extends javax.swing.JFrame {
                     res[1][rodadas] = res[1][rodadas-1] + 2;
                 }
                 jLabel1.setText("");
-                JOptionPane.showInternalMessageDialog(null,"Velha");
+                JOptionPane.showInternalMessageDialog(null,"Empate");
                 rodadas++;
                 velha = 0;
                 jButton1.setVisible(true);
             }else{
                 if(!jogador){
-                    jLabel1.setText("Vez dos Aliens");
-                }else jLabel1.setText("Vez do Humanos");
+                    jLabel1.setText("Aliens Atacam");
+                }else jLabel1.setText("Humanos Atacam");
             }
         }
         jogador = !jogador;
