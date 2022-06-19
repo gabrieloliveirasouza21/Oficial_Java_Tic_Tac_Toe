@@ -25,6 +25,10 @@ public class TelaResultado extends javax.swing.JFrame {
     public TelaResultado() {
         initComponents();
         this.setLocationRelativeTo(null);
+        TelaDeFundoAlien.setVisible(false);
+        TelaDeFundoHuman.setVisible(false);
+        if(TelaDoJogo.res[0][4] > TelaDoJogo.res[1][4]) TelaDeFundoAlien.setVisible(true);
+        if(TelaDoJogo.res[0][4] < TelaDoJogo.res[1][4]) TelaDeFundoHuman.setVisible(true);
         for(i = 0; i < 2; i ++){
             for(j = 0; j < 5; j++){
                 a[i][j] = TelaDoJogo.res[i][j];
@@ -73,7 +77,6 @@ public class TelaResultado extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         jButtonA = new javax.swing.JButton();
         jButtonB = new javax.swing.JButton();
         jButtonC = new javax.swing.JButton();
@@ -83,14 +86,19 @@ public class TelaResultado extends javax.swing.JFrame {
         jButtonBinario = new javax.swing.JButton();
         jButtonOctal = new javax.swing.JButton();
         jButtonHexadecimal = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextAreaResultado = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
+        TelaDeFundoAlien = new javax.swing.JLabel();
+        TelaDeFundoHuman = new javax.swing.JLabel();
+        TelaDeFundoEmpate = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jPanel1.setBackground(new java.awt.Color(255, 255, 204));
-        jPanel1.setToolTipText("matriz B contendo os valores invertidos da matriz A");
+        setMaximumSize(new java.awt.Dimension(1000, 625));
+        setMinimumSize(new java.awt.Dimension(1000, 625));
+        setResizable(false);
+        getContentPane().setLayout(null);
 
         jButtonA.setText("Matriz A");
         jButtonA.setToolTipText("Matriz A contendo os mesmos valores da matriz resultado.");
@@ -102,6 +110,9 @@ public class TelaResultado extends javax.swing.JFrame {
                 jButtonAMouseEntered(evt);
             }
         });
+        getContentPane().add(jButtonA);
+        jButtonA.setBounds(20, 40, 130, 22);
+        jButtonA.getAccessibleContext().setAccessibleDescription("teste");
 
         jButtonB.setText("Matriz B");
         jButtonB.setToolTipText("Matriz B contendo os valores invertidos da matriz A");
@@ -110,6 +121,8 @@ public class TelaResultado extends javax.swing.JFrame {
                 jButtonBMouseClicked(evt);
             }
         });
+        getContentPane().add(jButtonB);
+        jButtonB.setBounds(20, 70, 130, 22);
 
         jButtonC.setText("Matriz C");
         jButtonC.setToolTipText("Matriz C transposta a matriz A");
@@ -118,6 +131,8 @@ public class TelaResultado extends javax.swing.JFrame {
                 jButtonCMouseClicked(evt);
             }
         });
+        getContentPane().add(jButtonC);
+        jButtonC.setBounds(20, 100, 130, 22);
 
         jButtonD.setText("Matriz D");
         jButtonD.setToolTipText("Matriz D que corresponde a adição entre a matriz A e a matriz B");
@@ -126,6 +141,8 @@ public class TelaResultado extends javax.swing.JFrame {
                 jButtonDMouseClicked(evt);
             }
         });
+        getContentPane().add(jButtonD);
+        jButtonD.setBounds(20, 130, 130, 22);
 
         jButtonE.setText("Matriz E");
         jButtonE.setToolTipText("Matriz E que corresponde a subtração entre a matriz A e a matriz B");
@@ -134,6 +151,8 @@ public class TelaResultado extends javax.swing.JFrame {
                 jButtonEMouseClicked(evt);
             }
         });
+        getContentPane().add(jButtonE);
+        jButtonE.setBounds(20, 160, 130, 22);
 
         jButtonF.setText("Matriz F");
         jButtonF.setToolTipText("Matriz F que corresponde a multiplicação entre a matriz A e a matriz C");
@@ -142,6 +161,8 @@ public class TelaResultado extends javax.swing.JFrame {
                 jButtonFMouseClicked(evt);
             }
         });
+        getContentPane().add(jButtonF);
+        jButtonF.setBounds(20, 190, 130, 22);
 
         jButtonBinario.setText("Binario");
         jButtonBinario.setToolTipText("Variável B1 que corresponde ao valor binário do somatório dos resultados existentes na Matriz Resultado. ");
@@ -150,6 +171,8 @@ public class TelaResultado extends javax.swing.JFrame {
                 jButtonBinarioMouseClicked(evt);
             }
         });
+        getContentPane().add(jButtonBinario);
+        jButtonBinario.setBounds(20, 220, 130, 22);
 
         jButtonOctal.setText("Octal");
         jButtonOctal.setToolTipText("Variável O1 que corresponde ao valor octal do somatório dos resultados existentes na Matriz Resultado. ");
@@ -158,6 +181,8 @@ public class TelaResultado extends javax.swing.JFrame {
                 jButtonOctalMouseClicked(evt);
             }
         });
+        getContentPane().add(jButtonOctal);
+        jButtonOctal.setBounds(20, 250, 130, 22);
 
         jButtonHexadecimal.setText("Hexadecimal");
         jButtonHexadecimal.setToolTipText("Variável H1 que corresponde ao valor hexadecimal do somatório dos resultados existentes na Matriz Resultado.");
@@ -166,87 +191,49 @@ public class TelaResultado extends javax.swing.JFrame {
                 jButtonHexadecimalMouseClicked(evt);
             }
         });
+        getContentPane().add(jButtonHexadecimal);
+        jButtonHexadecimal.setBounds(20, 280, 130, 22);
+
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
+        jButton1.setText("Jogar Novamente");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(750, 510, 150, 22);
 
         jTextAreaResultado.setColumns(20);
         jTextAreaResultado.setRows(5);
         jScrollPane1.setViewportView(jTextAreaResultado);
 
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(10, 370, 280, 160);
+
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 51, 51));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Resultados");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(480, 10, 172, 48);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jButtonHexadecimal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButtonOctal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButtonE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButtonD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButtonA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jButtonB, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonC, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonF, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonBinario, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(118, 118, 118)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(25, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel1)
-                        .addGap(101, 101, 101))))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jButtonA, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButtonB)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButtonC)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButtonD)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButtonE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButtonF)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButtonBinario)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButtonOctal)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButtonHexadecimal))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(41, Short.MAX_VALUE))
-        );
+        TelaDeFundoAlien.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jogoVelha/Aliens wins.jpg"))); // NOI18N
+        getContentPane().add(TelaDeFundoAlien);
+        TelaDeFundoAlien.setBounds(0, 0, 1000, 625);
 
-        jButtonA.getAccessibleContext().setAccessibleDescription("teste");
+        TelaDeFundoHuman.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jogoVelha/Humans wins.jpg"))); // NOI18N
+        getContentPane().add(TelaDeFundoHuman);
+        TelaDeFundoHuman.setBounds(0, 0, 1000, 625);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        TelaDeFundoEmpate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jogoVelha/Velha.jpg"))); // NOI18N
+        TelaDeFundoEmpate.setText("jLabel2");
+        getContentPane().add(TelaDeFundoEmpate);
+        TelaDeFundoEmpate.setBounds(0, 0, 1041, 625);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    
     private void jButtonBinarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonBinarioMouseClicked
         jTextAreaResultado.setText(TrocaTroca(2));
     }//GEN-LAST:event_jButtonBinarioMouseClicked
@@ -317,7 +304,7 @@ public class TelaResultado extends javax.swing.JFrame {
             valores += "|";
             for(j = 0; j < 5; j++){
                 if(e[i][j] > 9) valores += " " + e[i][j] + " ";
-                else valores += " 0" + e[i][j] + " ";
+                else valores += " " + e[i][j] + " ";
             }
             valores += "|\n";
         }
@@ -340,6 +327,12 @@ public class TelaResultado extends javax.swing.JFrame {
     private void jButtonAMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonAMouseEntered
         
     }//GEN-LAST:event_jButtonAMouseEntered
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        dispose();
+        TelaInicial inicio = new TelaInicial();
+        inicio.setVisible(true);
+    }//GEN-LAST:event_jButton1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -377,6 +370,10 @@ public class TelaResultado extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel TelaDeFundoAlien;
+    private javax.swing.JLabel TelaDeFundoEmpate;
+    private javax.swing.JLabel TelaDeFundoHuman;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonA;
     private javax.swing.JButton jButtonB;
     private javax.swing.JButton jButtonBinario;
@@ -387,7 +384,6 @@ public class TelaResultado extends javax.swing.JFrame {
     private javax.swing.JButton jButtonHexadecimal;
     private javax.swing.JButton jButtonOctal;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextAreaResultado;
     // End of variables declaration//GEN-END:variables

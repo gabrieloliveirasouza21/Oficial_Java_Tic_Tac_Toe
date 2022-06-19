@@ -60,7 +60,12 @@ public class TelaDoJogo extends javax.swing.JFrame {
         jButton21 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton02 = new javax.swing.JButton();
+        jLabelVez = new javax.swing.JLabel();
+        jLabelPontosH = new javax.swing.JLabel();
+        jLabelRodadas = new javax.swing.JLabel();
+        jLabelPontosA = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         TelaDeFundo = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
@@ -203,17 +208,18 @@ public class TelaDoJogo extends javax.swing.JFrame {
         getContentPane().add(jButton21);
         jButton21.setBounds(280, 360, 90, 100);
 
-        jButton1.setBackground(new java.awt.Color(153, 153, 153));
+        jButton1.setBackground(new java.awt.Color(0, 0, 0));
         jButton1.setFont(new java.awt.Font("Book Antiqua", 3, 24)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
+        jButton1.setForeground(new java.awt.Color(255, 255, 0));
         jButton1.setText("Jogar novamente");
+        jButton1.setBorder(new javax.swing.border.MatteBorder(null));
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton1MouseClicked(evt);
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(190, 510, 256, 36);
+        jButton1.setBounds(190, 510, 256, 38);
 
         jButton02.setBackground(new java.awt.Color(0, 0, 0));
         jButton02.setFont(new java.awt.Font("Book Antiqua", 0, 48)); // NOI18N
@@ -227,12 +233,45 @@ public class TelaDoJogo extends javax.swing.JFrame {
         getContentPane().add(jButton02);
         jButton02.setBounds(400, 110, 100, 100);
 
-        jLabel1.setBackground(new java.awt.Color(0, 0, 153));
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabelVez.setBackground(new java.awt.Color(0, 0, 153));
+        jLabelVez.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabelVez.setForeground(new java.awt.Color(255, 255, 0));
+        jLabelVez.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelVez.setText("Humanos atacam");
+        getContentPane().add(jLabelVez);
+        jLabelVez.setBounds(190, 50, 280, 48);
+
+        jLabelPontosH.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabelPontosH.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelPontosH.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelPontosH.setText("0");
+        getContentPane().add(jLabelPontosH);
+        jLabelPontosH.setBounds(40, 300, 40, 40);
+
+        jLabelRodadas.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabelRodadas.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelRodadas.setText("1/5");
+        getContentPane().add(jLabelRodadas);
+        jLabelRodadas.setBounds(310, 0, 40, 32);
+
+        jLabelPontosA.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabelPontosA.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelPontosA.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelPontosA.setText("0");
+        getContentPane().add(jLabelPontosA);
+        jLabelPontosA.setBounds(550, 300, 40, 40);
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Vez dos Humanos");
+        jLabel1.setText("Humanos");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(180, 30, 320, 48);
+        jLabel1.setBounds(20, 280, 90, 25);
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Aliens");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(550, 280, 50, 20);
 
         TelaDeFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jogoVelha/Tela de fundo Jogo da velha.png"))); // NOI18N
         TelaDeFundo.setMaximumSize(new java.awt.Dimension(619, 679));
@@ -258,8 +297,8 @@ public class TelaDoJogo extends javax.swing.JFrame {
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         if(jogador){
-            jLabel1.setText("Vez dos Aliens");
-        }else jLabel1.setText("Vez dos Humanos");
+            jLabelVez.setText("Aliens Atacam");
+        }else jLabelVez.setText("Humanos Atacam");
         if(rodadas < 5){
             int num = 2;
             for(i = 0; i < 3; i++){
@@ -271,6 +310,7 @@ public class TelaDoJogo extends javax.swing.JFrame {
             ganhador = false;
             limpeza();
             jButton1.setVisible(false);
+            jLabelRodadas.setText((rodadas+1)+"/5");
             if(rodadas == 4){
                 jButton1.setText("Ver resultados");
             }
@@ -412,7 +452,7 @@ public class TelaDoJogo extends javax.swing.JFrame {
         
         velha ++;
         if(ganhador){
-            jLabel1.setText("");
+            jLabelVez.setText("");
             int num = 2;
             for(i = 0; i < 3; i++){
                 for(j = 0; j < 3; j++){
@@ -422,22 +462,26 @@ public class TelaDoJogo extends javax.swing.JFrame {
             }
            if(rodadas == 0){
                 if(jogador){
-                 res[0][rodadas] = res[0][rodadas] + 5;
-                 JOptionPane.showInternalMessageDialog(null,"Os Aliens Ganharam a Batalha");
+                    res[0][rodadas] = res[0][rodadas] + 5;
+                    JOptionPane.showInternalMessageDialog(null,"Os Aliens Ganharam a Batalha");
                 }else{
-                 res[1][rodadas] = res[0][rodadas] + 5;
-                 JOptionPane.showInternalMessageDialog(null,"Os Humanos Ganharam a Batalha");
-                }   
+                    res[1][rodadas] = res[0][rodadas] + 5;
+                    JOptionPane.showInternalMessageDialog(null,"Os Humanos Ganharam  a Batalha");
+                }
+                jLabelPontosH.setText(res[1][rodadas]+"");
+                jLabelPontosA.setText(res[0][rodadas]+"");
            }else{
                 if(jogador){
-                res[0][rodadas] = res[0][rodadas-1] + 5;
-                res[1][rodadas] = res[1][rodadas-1];
-                JOptionPane.showInternalMessageDialog(null,"Os Aliens Ganharam a Batalha");
-            }else{
-                res[1][rodadas] = res[1][rodadas-1] + 5;
-                res[0][rodadas] = res[0][rodadas-1];
-                JOptionPane.showInternalMessageDialog(null,"Os Humanos Ganharam a Batalha");
-            }
+                    res[0][rodadas] = res[0][rodadas-1] + 5;
+                    res[1][rodadas] = res[1][rodadas-1];
+                    JOptionPane.showInternalMessageDialog(null,"Os Aliens Ganharam a Batalha");
+                }else{
+                    res[1][rodadas] = res[1][rodadas-1] + 5;
+                    res[0][rodadas] = res[0][rodadas-1];
+                    JOptionPane.showInternalMessageDialog(null,"Os Humanos Ganharam a Batalha");
+                }
+                jLabelPontosH.setText(res[1][rodadas]+"");
+                jLabelPontosA.setText(res[0][rodadas]+"");
            }
             rodadas++;
             velha = 0;
@@ -451,15 +495,18 @@ public class TelaDoJogo extends javax.swing.JFrame {
                     res[0][rodadas] = res[0][rodadas-1] + 2;
                     res[1][rodadas] = res[1][rodadas-1] + 2;
                 }
-                jLabel1.setText("");
+                jLabelVez.setText("");
                 JOptionPane.showInternalMessageDialog(null,"Empate");
+                jLabelPontosH.setText(res[1][rodadas]+"");
+                jLabelPontosA.setText(res[0][rodadas]+"");
                 rodadas++;
                 velha = 0;
                 jButton1.setVisible(true);
+                
             }else{
                 if(!jogador){
-                    jLabel1.setText("Aliens Atacam");
-                }else jLabel1.setText("Humanos Atacam");
+                    jLabelVez.setText("Aliens Atacam");
+                }else jLabelVez.setText("Humanos Atacam");
             }
         }
         jogador = !jogador;
@@ -523,6 +570,11 @@ public class TelaDoJogo extends javax.swing.JFrame {
     private javax.swing.JButton jButton21;
     private javax.swing.JButton jButton22;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabelPontosA;
+    private javax.swing.JLabel jLabelPontosH;
+    private javax.swing.JLabel jLabelRodadas;
+    private javax.swing.JLabel jLabelVez;
     private javax.swing.JLayeredPane jLayeredPane1;
     // End of variables declaration//GEN-END:variables
 }

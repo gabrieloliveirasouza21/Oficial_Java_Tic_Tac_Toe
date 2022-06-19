@@ -34,6 +34,7 @@ public class TelaInicial extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
         TelaDeFundo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -45,7 +46,7 @@ public class TelaInicial extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(0, 0, 0));
         jButton1.setFont(new java.awt.Font("Lucida Bright", 0, 36)); // NOI18N
         jButton1.setForeground(new java.awt.Color(0, 204, 204));
-        jButton1.setText("Jogar");
+        jButton1.setText("JOGAR");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton1MouseClicked(evt);
@@ -58,7 +59,7 @@ public class TelaInicial extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(110, 490, 360, 80);
+        jButton1.setBounds(180, 480, 220, 60);
 
         jLabelX1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jogoVelha/Jogador 1.png"))); // NOI18N
         getContentPane().add(jLabelX1);
@@ -84,6 +85,17 @@ public class TelaInicial extends javax.swing.JFrame {
         getContentPane().add(jLabel5);
         jLabel5.setBounds(380, 250, 90, 80);
 
+        jButton2.setBackground(new java.awt.Color(0, 0, 0));
+        jButton2.setForeground(new java.awt.Color(0, 204, 204));
+        jButton2.setText("Como Jogar");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jButton2);
+        jButton2.setBounds(180, 550, 220, 30);
+
         TelaDeFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jogoVelha/Tela de fundo Jogo da velha.png"))); // NOI18N
         getContentPane().add(TelaDeFundo);
         TelaDeFundo.setBounds(-30, -60, 650, 800);
@@ -92,19 +104,25 @@ public class TelaInicial extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-
-        dispose();
+        dispose();//fecha a tela atual
         TelaDoJogo jogo = new TelaDoJogo();
-        jogo.setVisible(true);
+        jogo.setVisible(true);//abre o jogo
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseEntered
-        jButton1.setFont(new java.awt.Font("Lucida Bright", 0, 42));
+        //jButton1.setFont(new java.awt.Font("Lucida Bright", 0, 42));
     }//GEN-LAST:event_jButton1MouseEntered
 
     private void jButton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseExited
-        jButton1.setFont(new java.awt.Font("Lucida Bright", 0, 36));
+        //jButton1.setFont(new java.awt.Font("Lucida Bright", 0, 36));
     }//GEN-LAST:event_jButton1MouseExited
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        dispose();//fecha a tela atual
+        ComoJogar help = new ComoJogar();
+        help.setVisible(true);//abre a tela de como jogar
+
+    }//GEN-LAST:event_jButton2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -144,6 +162,7 @@ public class TelaInicial extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel TelaDeFundo;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
