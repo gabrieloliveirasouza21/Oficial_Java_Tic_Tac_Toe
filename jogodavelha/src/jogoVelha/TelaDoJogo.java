@@ -4,6 +4,7 @@
  */
 package jogoVelha;
 import javax.swing.JOptionPane;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -21,6 +22,8 @@ public class TelaDoJogo extends javax.swing.JFrame {
     public int jogo = 0;
     public int velha = 0;
     public int rodadas = 0;
+    ImageIcon iconHumano = new ImageIcon(getClass().getResource("Jogador 1.png"));
+    ImageIcon iconAlien = new ImageIcon(getClass().getResource("Jogador 2 Fundo preto.png"));
     
     
     
@@ -463,10 +466,10 @@ public class TelaDoJogo extends javax.swing.JFrame {
            if(rodadas == 0){
                 if(jogador){
                     res[0][rodadas] = res[0][rodadas] + 5;
-                    JOptionPane.showInternalMessageDialog(null,"Os Aliens Ganharam a Batalha");
+                    JOptionPane.showMessageDialog(null,"Os Aliens Ganharam a Batalha","Vencedor da Rodada",0,iconAlien);
                 }else{
                     res[1][rodadas] = res[0][rodadas] + 5;
-                    JOptionPane.showInternalMessageDialog(null,"Os Humanos Ganharam  a Batalha");
+                    JOptionPane.showMessageDialog(null,"Os Humanos Ganharam a Batalha","Vencedor da Rodada",0,iconHumano);
                 }
                 jLabelPontosH.setText(res[1][rodadas]+"");
                 jLabelPontosA.setText(res[0][rodadas]+"");
@@ -474,11 +477,11 @@ public class TelaDoJogo extends javax.swing.JFrame {
                 if(jogador){
                     res[0][rodadas] = res[0][rodadas-1] + 5;
                     res[1][rodadas] = res[1][rodadas-1];
-                    JOptionPane.showInternalMessageDialog(null,"Os Aliens Ganharam a Batalha");
+                    JOptionPane.showMessageDialog(null,"Os Aliens Ganharam a Batalha","Vencedor da Rodada",0,iconAlien);
                 }else{
                     res[1][rodadas] = res[1][rodadas-1] + 5;
                     res[0][rodadas] = res[0][rodadas-1];
-                    JOptionPane.showInternalMessageDialog(null,"Os Humanos Ganharam a Batalha");
+                    JOptionPane.showMessageDialog(null,"Os Humanos Ganharam a Batalha","Vencedor da Rodada",0,iconHumano);
                 }
                 jLabelPontosH.setText(res[1][rodadas]+"");
                 jLabelPontosA.setText(res[0][rodadas]+"");
