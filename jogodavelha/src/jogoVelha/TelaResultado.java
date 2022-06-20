@@ -27,45 +27,47 @@ public class TelaResultado extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         TelaDeFundoAlien.setVisible(false);
         TelaDeFundoHuman.setVisible(false);
-        if(TelaDoJogo.res[0][4] > TelaDoJogo.res[1][4]) TelaDeFundoAlien.setVisible(true);
-        if(TelaDoJogo.res[0][4] < TelaDoJogo.res[1][4]) TelaDeFundoHuman.setVisible(true);
+        if(TelaDoJogo.res[0][4] < TelaDoJogo.res[1][4]) TelaDeFundoAlien.setVisible(true);//se os aliens fizeram mais pontos, mostra a imagem deles
+        if(TelaDoJogo.res[0][4] > TelaDoJogo.res[1][4]) TelaDeFundoHuman.setVisible(true);//se os humanos fizeram mais pontos, mostra a imagem deles
+        //a imagem de empate esta sempre visivel porem com hierarquia menor que as outras duas
         for(i = 0; i < 2; i ++){
             for(j = 0; j < 5; j++){
-                a[i][j] = TelaDoJogo.res[i][j];
-                b[i][j] = TelaDoJogo.res[i][4-j];
-                c[j][i] = TelaDoJogo.res[i][j];
-                d[i][j] = a[i][j] + b[i][j];
-                e[i][j] = a[i][j] - b[i][j];
+                a[i][j] = TelaDoJogo.res[i][j];//guarda valores na matriz A
+                b[i][j] = TelaDoJogo.res[i][4-j];//guarda valores na matriz B
+                c[j][i] = TelaDoJogo.res[i][j];//guarda valores na matriz C
+                d[i][j] = a[i][j] + b[i][j];//guarda valores na matriz d
+                e[i][j] = a[i][j] - b[i][j];//guarda valores na matriz e
             }
         }
         f[0][0] = a[0][0]*c[0][0] + a[0][1]*c[1][0] + a[0][2]*c[2][0] + a[0][3]*c[3][0] + a[0][4]*c[4][0];
         f[0][1] = a[0][0]*c[0][1] + a[0][1]*c[1][1] + a[0][2]*c[2][1] + a[0][3]*c[3][1] + a[0][4]*c[4][1];
         f[1][0] = a[1][0]*c[0][0] + a[1][1]*c[1][0] + a[1][2]*c[2][0] + a[1][3]*c[3][0] + a[1][4]*c[4][0];
         f[1][1] = a[1][0]*c[0][1] + a[1][1]*c[1][1] + a[1][2]*c[2][1] + a[1][3]*c[3][1] + a[1][4]*c[4][1];
+        //guarda valores na matriz f
     }
-    public String TrocaTroca(int x){
-        v = 0;
-        valores = "";
+    public String TrocaTroca(int x){//metodo para trocar a base de qualquer valor na base 10 para qualquerbase entre 2 e 16
+        v = 0;//reseta o valor de v
+        valores = "";//string que vai guardar o valor final
         for(i = 0; i < 2; i++){
             for(j = 0; j < 5; j++){
-                v += a[i][j];
+                v += a[i][j];//recebe a soma de todos os valores da matriz resultado
             }
         }
-        while(v > 0){
-            t = v%x;
-            if(t >= 10){
+        while(v > 0){//repete a divisão do valor pela base selecionada até que seja 0
+            t = v%x;//guarda o resto na variavel T
+            if(t >= 10){//troca o resto obtido pela letra correspondente casoseja necessario e concatena com o resto dos resultados
                 if(t < 11)valores = "A" + valores;
                 else if(t < 12)valores = "B" + valores;
                 else if(t < 13)valores = "C" + valores;
                 else if(t < 14)valores = "D" + valores;
                 else if(t < 15)valores = "E" + valores;
                 else valores = "F" + valores;
-            }else{
+            }else{//concatena o resto atual com os outros resultados
                  valores = t + valores;
             }
-            v = v/x;
+            v = v/x;//divide pelo valor da base desejada enquanto possivel
         }
-        return(valores);
+        return(valores);//string com o valor desejado é o resultado
     } 
 
     /**
@@ -235,11 +237,11 @@ public class TelaResultado extends javax.swing.JFrame {
     
     
     private void jButtonBinarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonBinarioMouseClicked
-        jTextAreaResultado.setText(TrocaTroca(2));
+        jTextAreaResultado.setText(TrocaTroca(2));//mostra a string resultado do metodo para a base 2
     }//GEN-LAST:event_jButtonBinarioMouseClicked
 
     private void jButtonAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonAMouseClicked
-        valores = "";
+        valores = "";//reinicia a string que recebe o resultado
         for(i = 0; i < 2; i++){
             valores += "|";
             for(j = 0; j < 5; j++){
@@ -248,15 +250,15 @@ public class TelaResultado extends javax.swing.JFrame {
             }
             valores += "|\n";
         }
-        jTextAreaResultado.setText(valores);                                   
+        jTextAreaResultado.setText(valores);  //guarda a string formatada com os valores da matriz correspodente                                  
     }//GEN-LAST:event_jButtonAMouseClicked
 
     private void jButtonOctalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonOctalMouseClicked
-        jTextAreaResultado.setText(TrocaTroca(8));
+        jTextAreaResultado.setText(TrocaTroca(8));//mostra a string resultado do metodo para a base 8
     }//GEN-LAST:event_jButtonOctalMouseClicked
 
     private void jButtonHexadecimalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonHexadecimalMouseClicked
-        jTextAreaResultado.setText(TrocaTroca(16));
+        jTextAreaResultado.setText(TrocaTroca(16));//mostra a string resultado do metodo para a base 16
     }//GEN-LAST:event_jButtonHexadecimalMouseClicked
 
     private void jButtonBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonBMouseClicked
@@ -303,8 +305,8 @@ public class TelaResultado extends javax.swing.JFrame {
         for(i = 0; i < 2; i++){
             valores += "|";
             for(j = 0; j < 5; j++){
-                if(e[i][j] > 9) valores += " " + e[i][j] + " ";
-                else valores += " " + e[i][j] + " ";
+                if(e[i][j] > 9 || e[i][j] < -9) valores += " " + e[i][j] + " ";
+                else valores += "  " + e[i][j] + " ";
             }
             valores += "|\n";
         }
@@ -329,9 +331,9 @@ public class TelaResultado extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonAMouseEntered
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        dispose();
+        dispose();//fecha a tela atual
         TelaInicial inicio = new TelaInicial();
-        inicio.setVisible(true);
+        inicio.setVisible(true);//abre a tela inicial do jogo
     }//GEN-LAST:event_jButton1MouseClicked
 
     /**

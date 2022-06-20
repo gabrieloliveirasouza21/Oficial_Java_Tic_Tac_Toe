@@ -174,9 +174,9 @@ public class ComoJogar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        dispose();
+        dispose();//fecha a tela atual
         TelaInicial telaini = new TelaInicial();
-        telaini.setVisible(true);
+        telaini.setVisible(true);//volta a tela inicial
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked

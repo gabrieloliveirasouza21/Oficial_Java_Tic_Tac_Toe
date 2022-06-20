@@ -11,19 +11,16 @@ import javax.swing.ImageIcon;
  * @author HP
  */
 public class TelaDoJogo extends javax.swing.JFrame {
-    public int x[][] = new int[3][3];
-    public static int res[][] = new int[2][5];
-    public int i, j;
-    public int num;
-    public boolean jogador = false;
-    public boolean ganhador = false;
-    public int pont1;
-    public int pont2;
-    public int jogo = 0;
-    public int velha = 0;
-    public int rodadas = 0;
-    ImageIcon iconHumano = new ImageIcon(getClass().getResource("Jogador 1.png"));
-    ImageIcon iconAlien = new ImageIcon(getClass().getResource("Jogador 2 Fundo preto.png"));
+    public int x[][] = new int[3][3];//cria matriz para checagem do jogo da velha
+    public static int res[][] = new int[2][5];//cria matriz resultado
+    public int i, j;//variaveis usadas em estruturas de repetição
+    public int num;//variavel usada para colocar valores na matriz x
+    public boolean jogador = false;// true = aliens / false = humanos
+    public boolean ganhador = false;// variavel que ativa quando um ganhador é encontrado
+    public int velha = 0;// variavel para contagem, se chegar em 9 deu velha
+    public int rodadas = 0;// variavel que conta quantas rodadas foram jogadas
+    ImageIcon iconHumano = new ImageIcon(getClass().getResource("Jogador 1.png"));//criação de icon para JOp pane
+    ImageIcon iconAlien = new ImageIcon(getClass().getResource("Jogador 2 Fundo preto.png"));//criação de icon para JOp pane
     
     
     
@@ -35,8 +32,13 @@ public class TelaDoJogo extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         jButton1.setVisible(false);
-        int num = 2;
-        for(i = 0; i < 3; i++){
+        for(i = 0; i < 2; i++){
+            for(j = 0; j < 5; j++){
+                res[i][j] = 0;
+            }
+        }
+        int num = 2;//valor minimo colocado dentro de cada espaçoda matriz
+        for(i = 0; i < 3; i++){//coloca valores na matriz do jogo da velha
             for(j = 0; j < 3; j++){
                 x[i][j] = num;
                 num++;
@@ -286,11 +288,11 @@ public class TelaDoJogo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton02MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton02MouseClicked
-        if(x[0][2] != 0 && x[0][2] != 1 && !ganhador){
-            if(jogador){
+        if(x[0][2] != 0 && x[0][2] != 1 && !ganhador){//apenas roda o codigo se o valor namatriz for diferente de 0 e 1
+            if(jogador){//caso seja a vez dos aliens
                 x[0][2] = 0;
                 jButton02.setIcon(new javax.swing.ImageIcon("Jogador 2 Fundo preto.png"));
-            }else{
+            }else{//caso seja a vez dos humanos
                 x[0][2] = 1;
                 jButton02.setIcon(new javax.swing.ImageIcon("Jogador 1.png"));
             }
@@ -299,29 +301,30 @@ public class TelaDoJogo extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton02MouseClicked
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        if(jogador){
+        if(jogador){//mostra de quem é a vez no topo da tela
             jLabelVez.setText("Aliens Atacam");
         }else jLabelVez.setText("Humanos Atacam");
-        if(rodadas < 5){
-            int num = 2;
-            for(i = 0; i < 3; i++){
+        if(rodadas < 5){//roda apenas se ainda não tiverem sido jogador 5 jogos
+            num = 2;
+            for(i = 0; i < 3; i++){//reseta a matriz para valores maiores que 1
                 for(j = 0; j < 3; j++){
-                    x[i][j] = num;
-                    num++;
+                x[i][j] = num;
+                num++;
                 }
             }
-            ganhador = false;
-            limpeza();
-            jButton1.setVisible(false);
-            jLabelRodadas.setText((rodadas+1)+"/5");
-            if(rodadas == 4){
+            int num = 2;
+            ganhador = false;//prepara a variavel para ser usada novamente
+            limpeza();//limpa os icons de todos os botões
+            jButton1.setVisible(false);//impede o botão de aparecer até que alguem ganhe de novo
+            jLabelRodadas.setText((rodadas+1)+"/5");//atualiza o contador de rodadas no topo da tela
+            if(rodadas == 4){//quando o botão reaparecer o usuario vai ser direcionado para a tela de resultado
                 jButton1.setText("Ver resultados");
             }
         }
-        else{
-            dispose();
+        else{//quando for a quinta rodada
+            dispose();//fecha a tela atual
             TelaResultado resultado = new TelaResultado();
-            resultado.setVisible(true);
+            resultado.setVisible(true);//abre a tela de resultado
         }
     }//GEN-LAST:event_jButton1MouseClicked
 
@@ -453,68 +456,63 @@ public class TelaDoJogo extends javax.swing.JFrame {
         if(x[0][0] == x[1][1] && x[0][0] == x[2][2]) ganhador = true; //checando diagonal principal
         if(x[2][0] == x[1][1] && x[1][1] == x[0][2]) ganhador = true; // checando diagonal secundaria
         
-        velha ++;
-        if(ganhador){
-            jLabelVez.setText("");
+        velha ++;//contador para saber se deu velha caso chegue em 9 sem ganhadores
+        if(ganhador){//caso alguem tenha ganhado
+            jLabelVez.setText("");//não é a vez de ninguem
             int num = 2;
-            for(i = 0; i < 3; i++){
-                for(j = 0; j < 3; j++){
-                x[i][j] = num;
-                num++;
-                }
-            }
-           if(rodadas == 0){
-                if(jogador){
-                    res[0][rodadas] = res[0][rodadas] + 5;
-                    JOptionPane.showMessageDialog(null,"Os Aliens Ganharam a Batalha","Vencedor da Rodada",0,iconAlien);
-                }else{
-                    res[1][rodadas] = res[0][rodadas] + 5;
-                    JOptionPane.showMessageDialog(null,"Os Humanos Ganharam a Batalha","Vencedor da Rodada",0,iconHumano);
-                }
-                jLabelPontosH.setText(res[1][rodadas]+"");
-                jLabelPontosA.setText(res[0][rodadas]+"");
-           }else{
-                if(jogador){
-                    res[0][rodadas] = res[0][rodadas-1] + 5;
-                    res[1][rodadas] = res[1][rodadas-1];
-                    JOptionPane.showMessageDialog(null,"Os Aliens Ganharam a Batalha","Vencedor da Rodada",0,iconAlien);
-                }else{
-                    res[1][rodadas] = res[1][rodadas-1] + 5;
-                    res[0][rodadas] = res[0][rodadas-1];
-                    JOptionPane.showMessageDialog(null,"Os Humanos Ganharam a Batalha","Vencedor da Rodada",0,iconHumano);
-                }
-                jLabelPontosH.setText(res[1][rodadas]+"");
-                jLabelPontosA.setText(res[0][rodadas]+"");
-           }
-            rodadas++;
-            velha = 0;
-            jButton1.setVisible(true);
-        }else{
-            if(velha == 9){
-                if(rodadas == 0){
-                    res[0][rodadas] = res[0][rodadas] + 2;
-                    res[1][rodadas] = res[1][rodadas] + 2;
-                }else{
-                    res[0][rodadas] = res[0][rodadas-1] + 2;
-                    res[1][rodadas] = res[1][rodadas-1] + 2;
-                }
-                jLabelVez.setText("");
-                JOptionPane.showInternalMessageDialog(null,"Empate");
-                jLabelPontosH.setText(res[1][rodadas]+"");
-                jLabelPontosA.setText(res[0][rodadas]+"");
-                rodadas++;
-                velha = 0;
-                jButton1.setVisible(true);
-                
-            }else{
+           if(rodadas == 0){//quando for a primeira rodada 
                 if(!jogador){
+                    res[0][rodadas] = res[0][rodadas] + 5;//guarda a pontuação na matriz
+    
+                    JOptionPane.showMessageDialog(null,"Os Humanos Ganharam a Batalha","Vencedor da Rodada",0,iconHumano);//mostra mensagem na tela
+                }else{
+                    res[1][rodadas] = res[0][rodadas] + 5;//guarda a pontuação na matriz
+                    JOptionPane.showMessageDialog(null,"Os Aliens Ganharam a Batalha","Vencedor da Rodada",0,iconAlien);//mostra mensagem na tela
+                }
+                jLabelPontosH.setText(res[0][rodadas]+"");//atualiza placar em tempo real
+                jLabelPontosA.setText(res[1][rodadas]+"");//atualiza placar em tempo real
+           }else{
+                if(!jogador){
+                    res[0][rodadas] = res[0][rodadas-1] + 5;//guarda a pontuação na matriz
+                    res[1][rodadas] = res[1][rodadas-1];
+                    JOptionPane.showMessageDialog(null,"Os Humanos Ganharam a Batalha","Vencedor da Rodada",0,iconHumano);
+                }else{
+                    res[1][rodadas] = res[1][rodadas-1] + 5;//guarda a pontuação na matriz
+                    res[0][rodadas] = res[0][rodadas-1];
+                    JOptionPane.showMessageDialog(null,"Os Aliens Ganharam a Batalha","Vencedor da Rodada",0,iconAlien);//mostra mensagem na tela
+                }
+                jLabelPontosH.setText(res[0][rodadas]+"");//atualiza placar em tempo real
+                jLabelPontosA.setText(res[1][rodadas]+"");//atualiza placar em tempo real
+           }
+            rodadas++;//conta uma rodada ja que alguem ganhou
+            velha = 0;//reinicia o contador para a proxima rodada
+            jButton1.setVisible(true);//mostra o botão de jogar novamente
+        }else{//alguem não ganhou nessa rodada
+            if(velha == 9){//deu velha
+                if(rodadas == 0){//caso seja a primeira rodada
+                    res[0][rodadas] = res[0][rodadas] + 2;//guarda a pontuação na matriz
+                    res[1][rodadas] = res[1][rodadas] + 2;//guarda a pontuação na matriz
+                }else{//caso não seja a primeira rodada
+                    res[0][rodadas] = res[0][rodadas-1] + 2;//guarda a pontuação na matriz
+                    res[1][rodadas] = res[1][rodadas-1] + 2;//guarda a pontuação na matriz
+                }
+                jLabelVez.setText("");//não é a vez de ninguem
+                JOptionPane.showInternalMessageDialog(null,"Empate");//mostra que deu empate
+                jLabelPontosH.setText(res[0][rodadas]+"");//atualiza placar em tempo real
+                jLabelPontosA.setText(res[1][rodadas]+"");//atualiza placar em tempo real
+                rodadas++;//conta uma rodada ja que deu velha
+                velha = 0;//reinicia o contador para a proxima rodada
+                jButton1.setVisible(true);//mostra o botão de jogar novamente
+                
+            }else{//ninguem ganhou nem deu velha
+                if(!jogador){//mostra de quem será a vez na proxima rodada
                     jLabelVez.setText("Aliens Atacam");
                 }else jLabelVez.setText("Humanos Atacam");
             }
         }
-        jogador = !jogador;
+        jogador = !jogador;//troca de jogador
     }
-    public void limpeza(){
+    public void limpeza(){//limpa todos os icons dos botões
         jButton00.setIcon(null);
         jButton01.setIcon(null);
         jButton02.setIcon(null);
